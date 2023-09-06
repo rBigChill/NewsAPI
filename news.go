@@ -74,6 +74,9 @@ func (news *News) GetTop() {
 	var r Response
 	json.Unmarshal(body, &r)
 	for i, article := range r.Articles {
-		fmt.Printf("%d) %s\n\t%s0f\n\n", i+1, article.Title, article.URL)
+		if article.Title != "[Removed]" && i < 10 {
+			fmt.Printf("\n%d) %s\n\t%s0f\n", i+1, r.Articles[i].Title, r.Articles[i].URL)
+		}
 	}
+	fmt.Println()
 }
