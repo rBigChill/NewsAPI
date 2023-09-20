@@ -46,6 +46,8 @@ func (news *News) urlBuild(endpoint string) *url.URL {
 	return url
 }
 
+//func (news *News) queryBuild(query string) *url.URL {}
+
 func (news *News) buildRequest(url *url.URL) *http.Request {
 	request, err := http.NewRequest("GET", url.String(), nil)
 	if err != nil {
@@ -76,6 +78,8 @@ func (news *News) GetTop() {
 	for i, article := range r.Articles {
 		if article.Title != "[Removed]" && i < 10 {
 			fmt.Printf("\n%d) %s\n\t%s\n", i+1, r.Articles[i].Title, r.Articles[i].URL)
+		} else {
+			i--
 		}
 	}
 	fmt.Println()
