@@ -25,7 +25,7 @@ class NewsAPI:
             a = Article()
             a.title = v['title']
             a.url = v['url']
-            self.articles.append(a)
+            self.Articles.append(a)
             print(f"\n{i+1}) {a.title}\n")
 
 if __name__ == "__main__":
