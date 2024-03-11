@@ -23,7 +23,7 @@ class NewsAPI:
 
     def _getArticles(self):
         client = NewsApiClient(api_key = apiKey.ApiKey)
-        top = client.get_top_headlines(page_size=10,country='us') 
+        top = client.get_top_headlines(page_size=25,country='us') 
 
         for v in top['articles']:
             a = Article()
