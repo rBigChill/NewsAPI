@@ -37,6 +37,7 @@ class NewsAPI:
         print()
         for i in self.Articles:
             print(f"{count}) {i.title}\n")
+            count += 1
 
     def _clear(self):
         system('cls') if name == 'nt' else system('clear')
