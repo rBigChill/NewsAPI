@@ -52,7 +52,7 @@ class NewsAPI:
                     webbrowser.open(n.Articles[int(selection)-1].url)
                     self._clear()
                     self._printArticles()
-            except ValueError:
+            except (ValueError, IndexError):
                 print("Enter article number or Enter to quit")
 
     def GetNews(self):
